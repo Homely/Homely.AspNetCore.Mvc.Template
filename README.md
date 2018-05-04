@@ -1,0 +1,1 @@
+# Homely.AspNetCore.Mvc.Template
