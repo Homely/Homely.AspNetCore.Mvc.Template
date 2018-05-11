@@ -29,16 +29,6 @@ More info about templates: https://docs.microsoft.com/en-us/dotnet/core/tools/cu
 - [Pre-action validation via FluentValidation](https://github.com/Homely/Homely.AspNetCore.Mvc.Helpers#automatic-model-validation-via-fluentvalidation)
 - Swagger generation / UI via Swashbuckle
 - Test project for controllers using xunit / TestServer
-
----
-
-## TODO (add as issues)
-- CI
-- Code coverage
-- NuGet for template package
-- MediatR
-- Param support to optionally turn off some defaults (e.g MediatR, FluentValidation, Polly, Swagger, add a sample repository etc)
-
 ---
 
 ## Contributing
