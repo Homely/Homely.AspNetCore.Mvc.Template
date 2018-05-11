@@ -12,7 +12,7 @@ dotnet new -i homelyapi
 
 2. Create a new project using the template:
 ```
-dotnet new -n YourOrg.YourServiceName.WebApi
+dotnet new homelyapi -n YourOrg.YourServiceName.WebApi
 ```
 
 The new API template will be created with the namespace specified in the `-n` parameter. 
