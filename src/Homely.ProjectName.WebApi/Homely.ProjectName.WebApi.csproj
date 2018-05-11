@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation.AspNetCore" Version="7.5.2" />
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.7" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="2.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Homely.AspNetCore.Mvc.Helpers">
+      <HintPath>..\..\..\Homely.AspNetCore.Mvc.Helpers\src\Homely.AspNetCore.Mvc.Helpers\bin\Release\netstandard2.0\Homely.AspNetCore.Mvc.Helpers.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

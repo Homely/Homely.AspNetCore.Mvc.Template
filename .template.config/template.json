@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Homely",
+  "classifications": [ "Common", "API" ],
+  "identity": "Homely.AspNetCore.Mvc.Template",
+  "name": "Homely ASP.NET Core MVC Template",
+  "shortName": "homelyapi",
+  "tags": {
+    "language": "C#"
+  },
+  "sourceName": "Homely.ProjectName.WebApi",
+  "preferNameDirectory" : "true"
+}
