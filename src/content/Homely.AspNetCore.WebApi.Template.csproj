@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <PackageId>Homely.AspNetCore.WebApi.Template</PackageId>
+    <Version>0.0.0</Version>
+    <Authors>Homely's developers</Authors>
+    <Company>Homely</Company>
+    <Product>Homely - ASPNet Core Web API Template</Product>
+    <Description>An opinionated ASPNet Core Web API template to help reduce the ceremony required in starting a new 'REST' like web application.</Description>
+    <Copyright>2018</Copyright>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Hellang.Middleware.ProblemDetails" Version="2.1.1" />
+    <PackageReference Include="Homely.AspNetCore.Hosting.CoreApp" Version="1.0.0" />
+    <PackageReference Include="Homely.AspNetCore.Mvc.Helpers" Version="5.0.0-dev" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="5.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.App" Version="2.1.5" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="2.1.1" />
+    <PackageReference Include="NSwag.AspNetCore" Version="11.20.1" />
+    <PackageReference Include="Serilog" Version="2.7.1" />
+    <PackageReference Include="Serilog.AspNetCore" Version="2.1.1" />
+    <PackageReference Include="Serilog.Settings.Configuration" Version="3.0.1" />
+    <PackageReference Include="Serilog.Sinks.Console" Version="3.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Configuration\" />
+    <Folder Include="Features\" />
+  </ItemGroup>
+
+</Project>
