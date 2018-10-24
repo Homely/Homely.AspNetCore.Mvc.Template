@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>Homely.AspNetCore.WebApi.Template</id>
+    <version>0.0.0</version>
+    <description>
+      Creates an opinionated ASP.NET Core Web API template.
+    </description>
+    <authors>Homely's groovy developers!</authors>
+    <language>en-AU</language>
+    <projectUrl>https://github.com/Homely/Homely.AspNetCore.WebApi.Template</projectUrl>
+    <licenseUrl>https://github.com/Homely/Homely.AspNetCore.WebApi.Template/blob/master/LICENSE.txt</licenseUrl>
+    <copyright>2018</copyright>
+    <packageTypes>
+      <packageType name="Template" />
+    </packageTypes>
+  </metadata>
+</package>

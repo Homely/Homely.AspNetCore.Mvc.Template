@@ -1,0 +1,57 @@
+
+version: '{build}.0.0-dev'
+configuration: Release
+os: Visual Studio 2017
+pull_requests:
+  do_not_increment_build_number: true
+
+environment:
+  # Set the DOTNET_SKIP_FIRST_TIME_EXPERIENCE environment variable to stop wasting time caching packages
+  DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
+  # Disable sending usage data to Microsoft
+  DOTNET_CLI_TELEMETRY_OPTOUT: true
+  
+# Override the 'version' if this is a GH-tag-commit -or- this is a custom branch (i.e not 'master').
+init:
+  - ps: |
+      if ($env:APPVEYOR_REPO_TAG -eq $TRUE -and $env:APPVEYOR_REPO_BRANCH -eq 'master')
+      { 
+          Write-Host " !! Commit is Tagged and branch is 'master' - forcing build version to tag-value." -ForegroundColor Red; 
+          Update-AppveyorBuild -Version "$env:APPVEYOR_REPO_TAG_NAME"
+      }
+      iex ((new-object net.webclient).DownloadString('https://gist.githubusercontent.com/PureKrome/0f79e25693d574807939/raw/f5b40256fc2ca77d49f1c7773d28406152544c1e/appveyor-build-info.ps'))
+
+install:
+  - appveyor DownloadFile https://dist.nuget.org/win-x86-commandline/latest/nuget.exe
+
+before_build:
+  # Display .NET Core version
+  - cmd: dotnet --info
+
+build_script:
+  - ps: nuget pack src\\Homely.AspNetCore.WebApi.Template.nuspec
+
+test: off
+
+artifacts:
+  - path: '**\*.nupkg'
+    name: homely-nugets
+    type: NuGetPackage
+
+deploy:
+  - provider: NuGet
+    name: development
+    server: https://www.myget.org/F/homely-oss/api/v2/package
+    api_key:
+      secure: Hjh+3kM8vuQOP1NCxEMJA85F4ieaRNNWxGo+I4dxxYAZdjaHLy7tVmxw7lLmqDke
+    artifact: homely-nugets
+    on:
+      appveyor_repo_tag: false
+  - provider: NuGet
+    name: production
+    api_key:
+      secure: iPXynGb0cVVKAlfNomLLBC91RTyw6o7t0dBJWZjhjkB3PgqQ649jyykxRla6ZzLa
+    artifact: homely-nugets
+    on:
+      branch: master
+      appveyor_repo_tag: true

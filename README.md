@@ -1,5 +1,5 @@
-# Homely - ASP.NET Core MVC Template.
-This library contains a templated ASP.NET Core MVC project. The template package is available on NuGet, which will allow new API's/microservices to be easily created using the code in this repository. 
+# Homely - ASP.NET Core WebApi Template.
+This library contains a templated ASP.NET Core WebApi project. The template package is available on NuGet, which will allow new API's/microservices to be easily created using the code in this repository. 
 
 This library heavily leverages our other [helpers library](https://github.com/Homely/Homely.AspNetCore.Mvc.Helpers).
 
@@ -7,7 +7,7 @@ This library heavily leverages our other [helpers library](https://github.com/Ho
 ## How to use
 1. Install the template using the command line:
 ```
-dotnet new -i homelyapi
+dotnet new -i Homely.AspNetCore.WebApi.Template
 ```
 
 2. Create a new project using the template:
@@ -23,12 +23,14 @@ The new API template will be created with the namespace specified in the `-n` pa
 - The nuspec dictates this package is a special "template" file, via the `<packageType name="Template">` directive.
 More info about templates: https://docs.microsoft.com/en-us/dotnet/core/tools/custom-templates
 ---
+
 ## Current default features
-- [Custom JSON formatting](https://github.com/Homely/Homely.AspNetCore.Mvc.Helpers#consistent-api-error-schema-and-json-responses)
-- [Consistent error models](https://github.com/Homely/Homely.AspNetCore.Mvc.Helpers#500-internal-server-error-unhandled-errors-are-json-results)
-- [Pre-action validation via FluentValidation](https://github.com/Homely/Homely.AspNetCore.Mvc.Helpers#automatic-model-validation-via-fluentvalidation)
-- Swagger generation / UI via Swashbuckle
-- Test project for controllers using xunit / TestServer
+- Based off an Empty ASPNET Core 2.1 Web App.
+- Uses `ProblemDetails` for consistent error models [Shoutout to [@khellang Middleware library](https://github.com/khellang/Middleware)]
+- Default `HomeController`. (You can optionally provide a nice banner :)  )
+- Standardized JSON settings.
+- Serilog for logging (`Development` mode logs to `Console`). [Check here](https://github.com/serilog/serilog/wiki/Provided-Sinks) to use other sinks.
+- Swagger for API documentation.
 ---
 
 ## Contributing
