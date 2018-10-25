@@ -5,12 +5,6 @@ os: Visual Studio 2017
 pull_requests:
   do_not_increment_build_number: true
 
-environment:
-  # Set the DOTNET_SKIP_FIRST_TIME_EXPERIENCE environment variable to stop wasting time caching packages
-  DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
-  # Disable sending usage data to Microsoft
-  DOTNET_CLI_TELEMETRY_OPTOUT: true
-  
 # Override the 'version' if this is a GH-tag-commit -or- this is a custom branch (i.e not 'master').
 init:
   - ps: |
@@ -29,7 +23,7 @@ before_build:
   - cmd: dotnet --info
 
 build_script:
-  - ps: nuget pack src\\Homely.AspNetCore.WebApi.Template.nuspec
+  - ps: nuget pack src\\Homely.AspNetCore.WebApi.Template.nuspec -version $env:APPVEYOR_BUILD_VERSION
 
 test: off
 
@@ -46,6 +40,7 @@ deploy:
       secure: Hjh+3kM8vuQOP1NCxEMJA85F4ieaRNNWxGo+I4dxxYAZdjaHLy7tVmxw7lLmqDke
     artifact: homely-nugets
     on:
+      branch: master
       appveyor_repo_tag: false
   - provider: NuGet
     name: production
