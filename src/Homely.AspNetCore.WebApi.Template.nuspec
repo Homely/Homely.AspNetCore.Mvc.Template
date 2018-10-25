@@ -6,7 +6,7 @@
     <description>
       Creates an opinionated ASP.NET Core Web API template.
     </description>
-    <authors>Homely's groovy developers!</authors>
+    <authors>Homely</authors>
     <language>en-AU</language>
     <iconUrl>http://i.imgur.com/NiTIb6V.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
