@@ -25,7 +25,7 @@ More info about templates: https://docs.microsoft.com/en-us/dotnet/core/tools/cu
 ---
 
 ## Current default features
-- Based off an Empty ASPNET Core 2.1 Web App.
+- Based off an Empty ASPNET Core 2.2 Web App.
 - Uses `ProblemDetails` for consistent error models [Shoutout to [@khellang Middleware library](https://github.com/khellang/Middleware)]
 - Default `HomeController`. (You can optionally provide a nice banner :)  )
 - Standardized JSON settings.
