@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using NSwag.AspNetCore;
+using Swashbuckle.AspNetCore.Swagger;
 using System;
 
 namespace Homely.AspNetCore.WebApi.Template
@@ -37,11 +37,10 @@ namespace Homely.AspNetCore.WebApi.Template
                     .AddAHomeController(services, typeof(Startup), "*** Your WebApi Banner ***")
                     .AddACommonJsonFormatter()
                     .AddApiExplorer()
-                    .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+                    .SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             services.AddProblemDetails(options => options.IncludeExceptionDetails = _ => _hostingEnvironment.IsDevelopment())
-                    .ConfigureInvalidModelStateProblemDetails()
-                    .AddSwagger();
+                    .AddCustomSwagger("swagger-title", "swagger-version");
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -49,21 +48,7 @@ namespace Homely.AspNetCore.WebApi.Template
         {
             app.UseProblemDetails()
                .UseMvc()
-               .UseSwaggerUi3WithApiExplorer(settings =>
-               {
-                   settings.PostProcess = document =>
-                   {
-                       document.Info.Version = "1.0.0";
-                       document.Info.Title = "SOME API";
-                       document.Info.Description = "Description of this API";
-                       document.Info.Contact = new NSwag.SwaggerContact
-                       {
-                           Name = "Homely's Developers",
-                           Email = "support@homely.com.au",
-                           Url = "https://www.twitter.com/homelyau"
-                       };
-                   };
-               });
+               .UseCustomSwagger("swagger-routeprefix", "swagger-title", "swagger-version");
         }
     }
 }
