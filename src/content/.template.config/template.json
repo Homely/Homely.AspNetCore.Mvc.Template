@@ -9,5 +9,22 @@
     "language": "C#"
   },
   "sourceName": "Homely.AspNetCore.WebApi.Template",
-  "preferNameDirectory" : true
+  "preferNameDirectory" : true,
+  "symbols":{
+    "swagger-title": {
+        "type": "parameter",
+        "defaultValue": "My API",
+        "replaces":"swagger-title"
+    },
+    "swagger-version": {
+        "type": "parameter",
+        "defaultValue": "v1",
+        "replaces":"swagger-version"
+    },
+    "swagger-routeprefix": {
+      "type": "parameter",
+      "defaultValue": "swagger",
+      "replaces":"swagger-routeprefix"
+    }
+  }
 }
