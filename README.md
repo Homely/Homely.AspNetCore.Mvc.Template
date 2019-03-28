@@ -12,8 +12,17 @@ dotnet new -i Homely.AspNetCore.WebApi.Template
 
 2. Create a new project using the template:
 ```
-dotnet new homelyapi -n YourOrg.YourServiceName.WebApi
+dotnet new homelyapi -n YourOrg.YourServiceName.WebApi 
 ```
+
+Optional settings:
+
+| Argument | Description | Default Value | Sample Value |
+| -------- | ----------- | ------------- | ------------ |
+| `swagger-title` | Title for the Docs | `"My APU"` | `"Awesome API"` |
+| `swagger-version` | API Version | `v1` | `v2` |
+| `swagger-routeprefix` | Root route to access the swagger docs | `"swagger"` | `"accounts/swagger "` |
+
 
 The new API template will be created with the namespace specified in the `-n` parameter. 
 
@@ -27,10 +36,10 @@ More info about templates: https://docs.microsoft.com/en-us/dotnet/core/tools/cu
 ## Current default features
 - Based off an Empty ASPNET Core 2.2 Web App.
 - Uses `ProblemDetails` for consistent error models [Shoutout to [@khellang Middleware library](https://github.com/khellang/Middleware)]
-- Default `HomeController`. (You can optionally provide a nice banner :)  )
+- Default `HomeController` with default route "`<root>/`". (You can optionally provide a nice banner :)  )
 - Standardized JSON settings.
 - Serilog for logging (`Development` mode logs to `Console`). [Check here](https://github.com/serilog/serilog/wiki/Provided-Sinks) to use other sinks.
-- Swagger for API documentation.
+- Swagger (via [Swashbuckle Framework](https://github.com/domaindrivendev/Swashbuckle.AspNetCore)) for API documentation.
 ---
 
 ## Contributing
