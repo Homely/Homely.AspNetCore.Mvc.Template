@@ -45,7 +45,7 @@ deploy:
   - provider: NuGet
     name: production
     api_key:
-      secure: iPXynGb0cVVKAlfNomLLBC91RTyw6o7t0dBJWZjhjkB3PgqQ649jyykxRla6ZzLa
+      secure: 36NxHYhJErlI2N+nlVlzxRPeNoujnX2l8JyCLgn48v+S3sEZfEesZSzB9W3QW3ZY
     artifact: homely-nugets
     on:
       branch: master
